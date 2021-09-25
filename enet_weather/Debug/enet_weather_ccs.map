@@ -1,0 +1,1323 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.4                     
+******************************************************************************
+>> Linked Sun Nov 24 10:39:06 2019
+
+OUTPUT FILE NAME:   <enet_weather.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00007e1d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  0000a3a6  000f5c5a  R  X
+  SRAM                  20000000   00040000  0000d5c6  00032a3a  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    0000a3a8   0000a3a8    r-x
+  00000000    00000000    00000200   00000200    r-- .intvecs
+  00000200    00000200    000097ae   000097ae    r-x .text
+  000099b0    000099b0    000008b0   000008b0    r-- .const
+  0000a260    0000a260    00000148   00000148    r-- .cinit
+20000000    20000000    0000d5c8   00000000    rw-
+  20000000    20000000    0000cbba   00000000    rw- .bss
+  2000cbbc    2000cbbc    00000800   00000000    rw- .stack
+  2000d3bc    2000d3bc    0000020c   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000200     
+                  00000000    00000200     startup_ccs.obj (.intvecs)
+
+.text      0    00000200    000097ae     
+                  00000200    000007c0     lwiplib.obj (.text:tcp_receive)
+                  000009c0    000003d0     lwiplib.obj (.text:tcp_input)
+                  00000d90    000003b0     lwiplib.obj (.text:tcp_process)
+                  00001140    000002ec     lwiplib.obj (.text:tcp_write)
+                  0000142c    000002c8     lwiplib.obj (.text:tcp_slowtmr)
+                  000016f4    00000254     enet_weather.obj (.text:main)
+                  00001948    0000024d     ustdlib.obj (.text:uvsnprintf)
+                  00001b95    00000001     --HOLE-- [fill = 0]
+                  00001b96    00000002     startup_ccs.obj (.text:FaultISR)
+                  00001b98    00000228     lwiplib.obj (.text:dhcp_parse_reply)
+                  00001dc0    00000218     pinout.obj (.text:PinoutSet)
+                  00001fd8    00000208     enet_weather.obj (.text:UpdateUART)
+                  000021e0    00000200     driverlib.lib : sysctl.obj (.text:SysCtlClockFreqSet)
+                  000023e0    000001f9     json.obj (.text:JSONParseCurrent)
+                  000025d9    00000001     --HOLE-- [fill = 0]
+                  000025da    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  000025dc    000001f0     lwiplib.obj (.text:ip_input)
+                  000027cc    000001f0     lwiplib.obj (.text:udp_input)
+                  000029bc    000001ea     uartstdio.obj (.text:UARTvprintf)
+                  00002ba6    00000002     startup_ccs.obj (.text:NmiSR)
+                  00002ba8    000001c8     commands.obj (.text:Cmd_setproxy)
+                  00002d70    000001b7     json.obj (.text:JSONParseForecast)
+                  00002f27    00000001     --HOLE-- [fill = 0]
+                  00002f28    000001b4     enet_weather.obj (.text:UpdateCity)
+                  000030dc    000001a4     lwiplib.obj (.text:icmp_input)
+                  00003280    00000190     lwiplib.obj (.text:tcp_output)
+                  00003410    00000160     uartstdio.obj (.text:UARTStdioIntHandler)
+                  00003570    00000150     lwiplib.obj (.text:etharp_arp_input)
+                  000036c0    00000148     lwiplib.obj (.text:tcp_close_shutdown)
+                  00003808    00000140     lwiplib.obj (.text:tivaif_receive)
+                  00003948    0000013c     lwiplib.obj (.text:pbuf_alloc)
+                  00003a84    00000134     lwiplib.obj (.text:dns_recv)
+                  00003bb8    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00003cea    00000002     eth_client.obj (.text:TCPError)
+                  00003cec    00000124     eth_client.obj (.text:EthClientTick)
+                  00003e10    00000124     lwiplib.obj (.text:dhcp_create_msg)
+                  00003f34    0000011c     lwiplib.obj (.text:etharp_output)
+                  00004050    00000114     lwiplib.obj (.text:etharp_query)
+                  00004164    00000114     lwiplib.obj (.text:tcp_listen_input)
+                  00004278    00000110     lwiplib.obj (.text:ipaddr_aton)
+                  00004388    0000010c     lwiplib.obj (.text:mem_malloc)
+                  00004494    00000104     lwiplib.obj (.text:mem_trim)
+                  00004598    00000100     lwiplib.obj (.text:tivaif_transmit)
+                  00004698    000000f8     lwiplib.obj (.text:tcp_connect)
+                  00004790    000000f4     lwiplib.obj (.text:lwIPPrivateNetworkConfigChange)
+                  00004884    000000f0     lwiplib.obj (.text:ip_output_if)
+                  00004974    000000ec     lwiplib.obj (.text:udp_sendto_if)
+                  00004a60    000000e8     lwiplib.obj (.text:lwIPInit)
+                  00004b48    000000e0     lwiplib.obj (.text:etharp_find_entry)
+                  00004c28    000000dc     lwiplib.obj (.text:etharp_raw)
+                  00004d04    000000d8     lwiplib.obj (.text:tcp_output_segment)
+                  00004ddc    000000d4     lwiplib.obj (.text:autoip_tmr)
+                  00004eb0    000000d0     lwiplib.obj (.text:tcp_alloc)
+                  00004f80    000000cc     lwiplib.obj (.text:dhcp_recv)
+                  0000504c    000000cc     lwiplib.obj (.text:dhcp_select)
+                  00005118    000000cc     lwiplib.obj (.text:lwIPServiceTimers)
+                  000051e4    000000c8     commands.obj (.text:Cmd_cityscroll)
+                  000052ac    000000c8     lwiplib.obj (.text:dhcp_bind)
+                  00005374    000000c4     lwiplib.obj (.text:InitDMADescriptors)
+                  00005438    000000bc     lwiplib.obj (.text:dhcp_discover)
+                  000054f4    000000bc     lwiplib.obj (.text:tivaif_hwinit)
+                  000055b0    000000b8     lwiplib.obj (.text:dns_send)
+                  00005668    000000b8     lwiplib.obj (.text:tcp_create_segment)
+                  00005720    000000b4     eth_client.obj (.text:TCPReceive)
+                  000057d4    000000b0     uartstdio.obj (.text:UARTStdioConfig)
+                  00005884    000000ae     json.obj (.text:GetField)
+                  00005932    00000002     eth_client.obj (.text:lwIPHostTimerHandler)
+                  00005934    000000ac     eth_client.obj (.text:WeatherForecast)
+                  000059e0    000000ac     lwiplib.obj (.text:dns_enqueue)
+                  00005a8c    000000ac     lwiplib.obj (.text:ethernet_input)
+                  00005b38    000000ac     lwiplib.obj (.text:tcp_zero_window_probe)
+                  00005be4    000000a8     uartstdio.obj (.text:UARTwrite)
+                  00005c8c    000000a8     lwiplib.obj (.text:dhcp_start)
+                  00005d34    000000a8     lwiplib.obj (.text:tcp_enqueue_flags)
+                  00005ddc    000000a4     enet_weather.obj (.text:CheckForUserCommands)
+                  00005e80    000000a4     lwiplib.obj (.text:dhcp_release)
+                  00005f24    000000a4     lwiplib.obj (.text:dns_check_entry)
+                  00005fc8    000000a0     lwiplib.obj (.text:dhcp_handle_ack)
+                  00006068    000000a0     lwiplib.obj (.text:inet_chksum_pseudo)
+                  00006108    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  000061a4    0000009c     ustdlib.obj (.text:ustrtoul)
+                  00006240    00000098     lwiplib.obj (.text:dhcp_reboot)
+                  000062d8    00000092     lwiplib.obj (.text:pbuf_copy)
+                  0000636a    00000090     json.obj (.text:GetFieldValueString)
+                  000063fa    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : i_div0.obj (.text)
+                  000063fc    00000090     lwiplib.obj (.text:tcp_abandon)
+                  0000648c    00000090     lwiplib.obj (.text:tcp_rst)
+                  0000651c    0000008c     uartstdio.obj (.text:UARTPrimeTransmit)
+                  000065a8    00000088     eth_client.obj (.text:WeatherCurrent)
+                  00006630    00000084     lwiplib.obj (.text:lwIPLinkDetect)
+                  000066b4    00000084     lwiplib.obj (.text:tcp_timewait_input)
+                  00006738    00000082     lwiplib.obj (.text:autoip_arp_reply)
+                  000067ba    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : mpu_init.obj (.text)
+                  000067bc    00000080     lwiplib.obj (.text:dhcp_rebind)
+                  0000683c    00000080     lwiplib.obj (.text:dhcp_renew)
+                  000068bc    00000080     lwiplib.obj (.text:lwIPEthernetIntHandler)
+                  0000693c    00000080     lwiplib.obj (.text:lwIPPrivateInit)
+                  000069bc    00000080     lwiplib.obj (.text:tcp_parseopt)
+                  00006a3c    0000007c     eth_client.obj (.text:EthClientInit)
+                  00006ab8    0000007c     lwiplib.obj (.text:dhcp_timeout)
+                  00006b34    0000007c     lwiplib.obj (.text:tivaif_process_phy_interrupt)
+                  00006bb0    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  00006c2a    00000002                                   : startup.obj (.text)
+                  00006c2c    00000078     driverlib.lib : emac.obj (.text:EMACInit)
+                  00006ca4    00000078     lwiplib.obj (.text:tcp_oos_insert_segment)
+                  00006d1c    00000074     enet_weather.obj (.text:ResetCity)
+                  00006d90    00000074     lwiplib.obj (.text:etharp_update_arp_entry)
+                  00006e04    00000074     lwiplib.obj (.text:raw_input)
+                  00006e78    00000070     json.obj (.text:GetFieldValueInt)
+                  00006ee8    00000070     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.obj (.text)
+                  00006f58    00000070     lwiplib.obj (.text:tcp_fasttmr)
+                  00006fc8    0000006c     enet_weather.obj (.text:WeatherEvent)
+                  00007034    0000006c     lwiplib.obj (.text:icmp_send_response)
+                  000070a0    0000006c     lwiplib.obj (.text:memp_init)
+                  0000710c    00000068     driverlib.lib : interrupt.obj (.text:IntEnable)
+                  00007174    00000068     eth_client.obj (.text:TCPConnected)
+                  000071dc    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00007244    00000068     lwiplib.obj (.text:dhcp_decline)
+                  000072ac    00000068     lwiplib.obj (.text:lwip_standard_chksum)
+                  00007314    00000068     lwiplib.obj (.text:netif_set_ipaddr)
+                  0000737c    00000068     lwiplib.obj (.text:pbuf_copy_partial)
+                  000073e4    00000068     lwiplib.obj (.text:sys_timeout)
+                  0000744c    00000068     lwiplib.obj (.text:tcp_output_alloc_header)
+                  000074b4    00000068     lwiplib.obj (.text:tcp_process_refused_data)
+                  0000751c    00000068     lwiplib.obj (.text:udp_bind)
+                  00007584    00000064     cmdline.obj (.text:CmdLineProcess)
+                  000075e8    00000064     lwiplib.obj (.text:dns_init)
+                  0000764c    00000064     lwiplib.obj (.text:mem_free)
+                  000076b0    00000064     lwiplib.obj (.text:plug_holes)
+                  00007714    00000062     lwiplib.obj (.text:pbuf_header)
+                  00007776    00000002     --HOLE-- [fill = 0]
+                  00007778    00000060     commands.obj (.text:Cmd_help)
+                  000077d8    00000060     enet_weather.obj (.text:UpdateMACAddr)
+                  00007838    00000060     lwiplib.obj (.text:sys_timeouts_init)
+                  00007898    0000005c     lwiplib.obj (.text:dns_gethostbyname)
+                  000078f4    0000005c     lwiplib.obj (.text:memp_malloc)
+                  00007950    0000005c     lwiplib.obj (.text:tcp_keepalive)
+                  000079ac    0000005c     lwiplib.obj (.text:tcp_pcb_remove)
+                  00007a08    0000005c     lwiplib.obj (.text:tcp_send_empty_ack)
+                  00007a64    0000005a     lwiplib.obj (.text:pbuf_realloc)
+                  00007abe    00000002     --HOLE-- [fill = 0]
+                  00007ac0    00000058     driverlib.lib : emac.obj (.text:EMACPHYConfigSet)
+                  00007b18    00000058     eth_client.obj (.text:EthClientTCPConnect)
+                  00007b70    00000058     flash_pb.obj (.text:FlashPBInit)
+                  00007bc8    00000058     lwiplib.obj (.text:autoip_start)
+                  00007c20    00000056     lwiplib.obj (.text:tcp_rexmit)
+                  00007c76    00000002     --HOLE-- [fill = 0]
+                  00007c78    00000054     eth_client.obj (.text:MergeRequest)
+                  00007ccc    00000054     uartstdio.obj (.text:UARTgets)
+                  00007d20    00000054     lwiplib.obj (.text:autoip_create_addr)
+                  00007d74    00000054     lwiplib.obj (.text:mem_init)
+                  00007dc8    00000054     lwiplib.obj (.text:netif_add)
+                  00007e1c    00000054     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00007e70    00000054                                   : exit.obj (.text)
+                  00007ec4    00000054     lwiplib.obj (.text:tcp_new_port)
+                  00007f18    00000052     lwiplib.obj (.text:tcp_pbuf_prealloc)
+                  00007f6a    00000052     lwiplib.obj (.text:tivaif_process_transmit)
+                  00007fbc    00000050     eth_client.obj (.text:EthClientDNSResolve)
+                  0000800c    00000050     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReset)
+                  0000805c    00000050     enet_weather.obj (.text:UpdateIPAddress)
+                  000080ac    00000050     lwiplib.obj (.text:tcp_write_checks)
+                  000080fc    0000004e     lwiplib.obj (.text:autoip_start_probing)
+                  0000814a    0000004e     lwiplib.obj (.text:inet_chksum_pbuf)
+                  00008198    0000004e     lwiplib.obj (.text:pbuf_free)
+                  000081e6    00000002     --HOLE-- [fill = 0]
+                  000081e8    0000004c     enet_weather.obj (.text:ProxyEnable)
+                  00008234    0000004c     lwiplib.obj (.text:etharp_output_to_arp_index)
+                  00008280    0000004c     lwiplib.obj (.text:ip_route)
+                  000082cc    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00008318    0000004c     lwiplib.obj (.text:tivaif_interrupt)
+                  00008364    0000004c     lwiplib.obj (.text:udp_connect)
+                  000083b0    0000004c     lwiplib.obj (.text:udp_new_port)
+                  000083fc    00000048     driverlib.lib : sysctl.obj (.text:_SysCtlFrequencyGet)
+                  00008444    00000048     lwiplib.obj (.text:ip_output)
+                  0000848c    00000048     lwiplib.obj (.text:tcp_kill_prio)
+                  000084d4    00000048     lwiplib.obj (.text:tcp_rexmit_fast)
+                  0000851c    00000048     lwiplib.obj (.text:tivaif_check_pbuf)
+                  00008564    00000046     lwiplib.obj (.text:tcp_send_fin)
+                  000085aa    00000002     --HOLE-- [fill = 0]
+                  000085ac    00000044     eth_client.obj (.text:EthClientDHCPConnect)
+                  000085f0    00000044     uartstdio.obj (.text:UARTPeek)
+                  00008634    00000042     lwiplib.obj (.text:dhcp_network_changed)
+                  00008676    00000042     lwiplib.obj (.text:dhcp_option_long)
+                  000086b8    00000042     lwiplib.obj (.text:tcp_pcb_purge)
+                  000086fa    00000040     json.obj (.text:CompareString)
+                  0000873a    00000002     --HOLE-- [fill = 0]
+                  0000873c    00000040     enet_weather.obj (.text:EnetEvents)
+                  0000877c    00000040     lwiplib.obj (.text:etharp_tmr)
+                  000087bc    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : u_divt2.obj (.text)
+                  000087fc    0000003e     lwiplib.obj (.text:netif_set_link_up)
+                  0000883a    00000002     --HOLE-- [fill = 0]
+                  0000883c    0000003c     uartstdio.obj (.text:UARTFlushTx)
+                  00008878    0000003c     lwiplib.obj (.text:dhcp_coarse_tmr)
+                  000088b4    0000003a     driverlib.lib : emac.obj (.text:EMACIntEnable)
+                  000088ee    0000003a     lwiplib.obj (.text:dns_compare_name)
+                  00008928    00000038     driverlib.lib : emac.obj (.text:EMACConfigSet)
+                  00008960    00000038     eth_client.obj (.text:EthClientReset)
+                  00008998    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
+                  000089d0    00000038     lwiplib.obj (.text:dhcp_fine_tmr)
+                  00008a08    00000038     lwiplib.obj (.text:dhcp_handle_nak)
+                  00008a40    00000038     lwiplib.obj (.text:dhcp_stop)
+                  00008a78    00000038     lwiplib.obj (.text:dns_lookup)
+                  00008ab0    00000038     lwiplib.obj (.text:memp_free)
+                  00008ae8    00000038     lwiplib.obj (.text:tcpip_tcp_timer)
+                  00008b20    00000038     lwiplib.obj (.text:udp_sendto)
+                  00008b58    00000036     ustdlib.obj (.text:ustrncmp)
+                  00008b8e    00000002     --HOLE-- [fill = 0]
+                  00008b90    00000034     driverlib.lib : emac.obj (.text:EMACConfigGet)
+                  00008bc4    00000034                   : emac.obj (.text:EMACIntClear)
+                  00008bf8    00000034     lwiplib.obj (.text:autoip_arp_probe)
+                  00008c2c    00000034     lwiplib.obj (.text:tcp_kill_timewait)
+                  00008c60    00000034     lwiplib.obj (.text:tcp_timer_needed)
+                  00008c94    00000034     lwiplib.obj (.text:tivaif_init)
+                  00008cc8    00000032     lwiplib.obj (.text:ip4_addr_isbroadcast)
+                  00008cfa    00000032     lwiplib.obj (.text:tcp_recved)
+                  00008d2c    00000030     eth_client.obj (.text:DNSServerFound)
+                  00008d5c    00000030     flash_pb.obj (.text:FlashPBIsValid)
+                  00008d8c    00000030     json.obj (.text:GetImage)
+                  00008dbc    00000030     lwiplib.obj (.text:dhcp_option_trailer)
+                  00008dec    00000030     lwiplib.obj (.text:tcp_update_rcv_ann_wnd)
+                  00008e1c    00000030     lwiplib.obj (.text:udp_remove)
+                  00008e4c    0000002e     lwiplib.obj (.text:tcp_rexmit_rto)
+                  00008e7a    00000002     --HOLE-- [fill = 0]
+                  00008e7c    0000002d     enet_weather.obj (.text:PrintIPAddress)
+                  00008ea9    00000001     --HOLE-- [fill = 0]
+                  00008eaa    0000002c     driverlib.lib : emac.obj (.text:EMACIntStatus)
+                  00008ed6    00000002     --HOLE-- [fill = 0]
+                  00008ed8    0000002c     uartstdio.obj (.text:UARTFlushRx)
+                  00008f04    0000002c     lwiplib.obj (.text:autoip_arp_announce)
+                  00008f30    0000002c     lwiplib.obj (.text:dhcp_handle_offer)
+                  00008f5c    0000002c     lwiplib.obj (.text:etharp_request)
+                  00008f88    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00008fb2    0000002a     lwiplib.obj (.text:autoip_bind)
+                  00008fdc    0000002a     lwiplib.obj (.text:pbuf_cat)
+                  00009006    0000002a     ustdlib.obj (.text:ustrncpy)
+                  00009030    00000028     lwiplib.obj (.text:etharp_cleanup_netif)
+                  00009058    00000026     driverlib.lib : emac.obj (.text:EMACPHYRead)
+                  0000907e    00000026                   : emac.obj (.text:EMACPHYWrite)
+                  000090a4    00000026     lwiplib.obj (.text:dhcp_check)
+                  000090ca    00000026     lwiplib.obj (.text:tcp_recv_null)
+                  000090f0    00000024     eth_client.obj (.text:EthClientSend)
+                  00009114    00000024     driverlib.lib : interrupt.obj (.text:IntPrioritySet)
+                  00009138    00000024     lwiplib.obj (.text:dns_setserver)
+                  0000915c    00000024     lwiplib.obj (.text:etharp_free_entry)
+                  00009180    00000024     lwiplib.obj (.text:lwIPNetworkConfigChange)
+                  000091a4    00000024     lwiplib.obj (.text:netif_set_up)
+                  000091c8    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : memcmp.obj (.text)
+                  000091ec    00000024     lwiplib.obj (.text:tcp_seg_copy)
+                  00009210    00000022     lwiplib.obj (.text:dhcp_option_short)
+                  00009232    00000020     json.obj (.text:BufPtrInc)
+                  00009252    00000002     --HOLE-- [fill = 0]
+                  00009254    00000020     driverlib.lib : interrupt.obj (.text:IntPriorityGroupingSet)
+                  00009274    00000020     enet_weather.obj (.text:TempCtoF)
+                  00009294    00000020     driverlib.lib : sysctl.obj (.text:_SysCtlMemTimingGet)
+                  000092b4    00000020     lwiplib.obj (.text:autoip_handle_arp_conflict)
+                  000092d4    00000020     lwiplib.obj (.text:dhcp_option)
+                  000092f4    00000020     lwiplib.obj (.text:etharp_send_ip)
+                  00009314    00000020     lwiplib.obj (.text:lwIPTimer)
+                  00009334    00000020     lwiplib.obj (.text:tcp_eff_send_mss)
+                  00009354    00000020     lwiplib.obj (.text:tcp_tmr)
+                  00009374    00000020     ustdlib.obj (.text:usprintf)
+                  00009394    0000001e     driverlib.lib : emac.obj (.text:EMACAddrGet)
+                  000093b2    0000001e     lwiplib.obj (.text:netif_set_down)
+                  000093d0    0000001c     eth_client.obj (.text:EthClientMACAddrGet)
+                  000093ec    0000001c     enet_weather.obj (.text:SysTickIntHandler)
+                  00009408    0000001c     lwiplib.obj (.text:dns_parse_name)
+                  00009424    0000001c     lwiplib.obj (.text:lwIPLocalIPAddrGet)
+                  00009440    0000001c     lwiplib.obj (.text:netif_set_addr)
+                  0000945c    0000001c     lwiplib.obj (.text:udp_new)
+                  00009478    0000001a     uartstdio.obj (.text:UARTprintf)
+                  00009492    0000001a     lwiplib.obj (.text:autoip_network_changed)
+                  000094ac    0000001a     lwiplib.obj (.text:dhcp_arp_reply)
+                  000094c6    0000001a     lwiplib.obj (.text:lwip_htonl)
+                  000094e0    00000018     eth_client.obj (.text:EthClientTCPDisconnect)
+                  000094f8    00000018     uartstdio.obj (.text:IsBufferFull)
+                  00009510    00000018     lwiplib.obj (.text:arp_timer)
+                  00009528    00000018     lwiplib.obj (.text:autoip_timer)
+                  00009540    00000018     lwiplib.obj (.text:dhcp_timer_coarse)
+                  00009558    00000018     lwiplib.obj (.text:dhcp_timer_fine)
+                  00009570    00000018     lwiplib.obj (.text:dns_timer)
+                  00009588    00000018     lwiplib.obj (.text:pbuf_pool_is_empty)
+                  000095a0    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  000095b8    00000018                                   : strcmp.obj (.text)
+                  000095d0    00000018     lwiplib.obj (.text:tcp_next_iss)
+                  000095e8    00000018     lwiplib.obj (.text:tcp_seg_free)
+                  00009600    00000016     driverlib.lib : emac.obj (.text:EMACReset)
+                  00009616    00000016                   : emac.obj (.text:EMACRxEnable)
+                  0000962c    00000016                   : emac.obj (.text:EMACTxEnable)
+                  00009642    00000016     lwiplib.obj (.text:dhcp_delete_msg)
+                  00009658    00000016     lwiplib.obj (.text:dhcp_t1_timeout)
+                  0000966e    00000016     lwiplib.obj (.text:dhcp_t2_timeout)
+                  00009684    00000016     lwiplib.obj (.text:pbuf_ref)
+                  0000969a    00000002     --HOLE-- [fill = 0]
+                  0000969c    00000014     driverlib.lib : flash.obj (.text:FlashUserGet)
+                  000096b0    00000014                   : systick.obj (.text:SysTickEnable)
+                  000096c4    00000014                   : systick.obj (.text:SysTickIntEnable)
+                  000096d8    00000014     lwiplib.obj (.text:ipaddr_addr)
+                  000096ec    00000014     lwiplib.obj (.text:lwip_init)
+                  00009700    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00009714    00000014                                   : strlen.obj (.text)
+                  00009728    00000014     lwiplib.obj (.text:sys_arch_unprotect)
+                  0000973c    00000014     lwiplib.obj (.text:tcp_close)
+                  00009750    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeEthernetLED)
+                  00009762    00000012     uartstdio.obj (.text:GetBufferCount)
+                  00009774    00000012     lwiplib.obj (.text:dhcp_option_byte)
+                  00009786    00000012     lwiplib.obj (.text:dns_check_entries)
+                  00009798    00000012     lwiplib.obj (.text:netif_set_link_down)
+                  000097aa    00000012     lwiplib.obj (.text:pbuf_clen)
+                  000097bc    00000012     lwiplib.obj (.text:tcp_segs_free)
+                  000097ce    00000012     ustdlib.obj (.text:ustrlen)
+                  000097e0    00000010     driverlib.lib : emac.obj (.text:EMACFrameFilterSet)
+                  000097f0    00000010     eth_client.obj (.text:EthClientProxySet)
+                  00009800    00000010     flash_pb.obj (.text:FlashPBGet)
+                  00009810    00000010     driverlib.lib : interrupt.obj (.text:IntMasterDisable)
+                  00009820    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  00009830    00000010                   : systick.obj (.text:SysTickPeriodSet)
+                  00009840    00000010     lwiplib.obj (.text:autoip_stop)
+                  00009850    00000010     lwiplib.obj (.text:dhcp_set_state)
+                  00009860    00000010     lwiplib.obj (.text:dns_tmr)
+                  00009870    00000010     lwiplib.obj (.text:inet_chksum)
+                  00009880    00000010     lwiplib.obj (.text:pbuf_chain)
+                  00009890    00000010     lwiplib.obj (.text:sys_arch_protect)
+                  000098a0    0000000e     uartstdio.obj (.text:IsBufferEmpty)
+                  000098ae    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  000098bc    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsid)
+                  000098c8    0000000c                   : cpu.obj (.text:CPUcpsie)
+                  000098d4    0000000c                   : sysctl.obj (.text:SysCtlMOSCConfigSet)
+                  000098e0    0000000c     lwiplib.obj (.text:autoip_restart)
+                  000098ec    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  000098f8    0000000c     lwiplib.obj (.text:lwip_htons)
+                  00009904    0000000c     lwiplib.obj (.text:netif_set_default)
+                  00009910    0000000c     lwiplib.obj (.text:netif_set_gw)
+                  0000991c    0000000c     lwiplib.obj (.text:netif_set_netmask)
+                  00009928    0000000c     lwiplib.obj (.text:sys_now)
+                  00009934    0000000a     json.obj (.text:BufData8Get)
+                  0000993e    00000008     json.obj (.text:BufPtrInit)
+                  00009946    00000008     driverlib.lib : emac.obj (.text:EMACPowerManagementStatusGet)
+                  0000994e    00000008                   : emac.obj (.text:EMACTxDMAPollDemand)
+                  00009956    00000008     lwiplib.obj (.text:icmp_dest_unreach)
+                  0000995e    00000008     ustdlib.obj (.text:ustrcmp)
+                  00009966    00000006     driverlib.lib : emac.obj (.text:EMACRxDMADescriptorListSet)
+                  0000996c    00000006                   : emac.obj (.text:EMACTimestampIntStatus)
+                  00009972    00000006                   : emac.obj (.text:EMACTxDMADescriptorListSet)
+                  00009978    00000006     startup_ccs.obj (.text:ResetISR)
+                  0000997e    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  00009984    00000006     lwiplib.obj (.text:tcp_abort)
+                  0000998a    00000006     lwiplib.obj (.text:tcp_err)
+                  00009990    00000006     lwiplib.obj (.text:tcp_new)
+                  00009996    00000006     lwiplib.obj (.text:tcp_recv)
+                  0000999c    00000006     lwiplib.obj (.text:udp_recv)
+                  000099a2    00000004     eth_client.obj (.text:TCPSent)
+                  000099a6    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+                  000099aa    00000004     lwiplib.obj (.text:tcp_sent)
+
+.const     0    000099b0    000008b0     
+                  000099b0    000001ee     enet_weather.obj (.const:.string)
+                  00009b9e    00000002     --HOLE-- [fill = 0]
+                  00009ba0    000001b0     driverlib.lib : sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  00009d50    0000009c                   : interrupt.obj (.const:g_pui32Regs)
+                  00009dec    00000094     enet_weather.obj (.const:g_sDefaultParams)
+                  00009e80    0000008e     commands.obj (.const:.string)
+                  00009f0e    00000002     --HOLE-- [fill = 0]
+                  00009f10    00000076     json.obj (.const:.string)
+                  00009f86    00000002     --HOLE-- [fill = 0]
+                  00009f88    00000070     driverlib.lib : interrupt.obj (.const)
+                  00009ff8    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  0000a064    0000006c     json.obj (.const:pcIconTable$1)
+                  0000a0d0    0000003d     eth_client.obj (.const:.string:g_cWeatherRequestForecast)
+                  0000a10d    00000036     eth_client.obj (.const:.string:g_cWeatherRequest)
+                  0000a143    00000001     --HOLE-- [fill = 0]
+                  0000a144    00000030     driverlib.lib : sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  0000a174    00000018     eth_client.obj (.const:.string:g_cMode)
+                  0000a18c    00000018     driverlib.lib : emac.obj (.const)
+                  0000a1a4    00000011     enet_weather.obj (.const:.string:g_pcWaitData)
+                  0000a1b5    00000001     --HOLE-- [fill = 0]
+                  0000a1b6    00000010     lwiplib.obj (.const:memp_num)
+                  0000a1c6    00000010     lwiplib.obj (.const:memp_sizes)
+                  0000a1d6    00000002     --HOLE-- [fill = 0]
+                  0000a1d8    00000010     lwiplib.obj (.const:tcp_pcb_lists)
+                  0000a1e8    0000000f     enet_weather.obj (.const:.string:g_pcNotFound)
+                  0000a1f7    0000000d     lwiplib.obj (.const:.string:tcp_backoff)
+                  0000a204    0000000c     enet_weather.obj (.const:.string:g_pcServerBusy)
+                  0000a210    0000000c     uartstdio.obj (.const:g_ui32UARTBase)
+                  0000a21c    0000000c     uartstdio.obj (.const:g_ui32UARTInt)
+                  0000a228    0000000c     uartstdio.obj (.const:g_ui32UARTPeriph)
+                  0000a234    00000008     driverlib.lib : sysctl.obj (.const)
+                  0000a23c    00000007     eth_client.obj (.const:.string:$P$T0$1)
+                  0000a243    00000007     lwiplib.obj (.const:.string:tcp_persist_backoff)
+                  0000a24a    00000006     lwiplib.obj (.const:ethbroadcast)
+                  0000a250    00000006     lwiplib.obj (.const:ethzero)
+                  0000a256    00000002     --HOLE-- [fill = 0]
+                  0000a258    00000004     lwiplib.obj (.const:ip_addr_any)
+                  0000a25c    00000004     lwiplib.obj (.const:ip_addr_broadcast)
+
+.cinit     0    0000a260    00000148     
+                  0000a260    00000123     (.cinit..data.load) [load image, compression = lzss]
+                  0000a383    00000001     --HOLE-- [fill = 0]
+                  0000a384    0000000c     (__TI_handler_table)
+                  0000a390    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000a398    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    0000cbba     UNINITIALIZED
+                  20000000    00008014     (.common:ram_heap)
+                  20008014    00002eb4     lwiplib.obj (.bss:memp_memory)
+                  2000aec8    00000618     (.common:g_psCityInfo)
+                  2000b4e0    00000460     lwiplib.obj (.bss:dns_table)
+                  2000b940    00000400     uartstdio.obj (.bss:g_pcUARTTxBuffer)
+                  2000bd40    00000400     (.common:g_cInput)
+                  2000c140    00000204     lwiplib.obj (.bss:dns_payload_buffer)
+                  2000c344    00000120     (.common:g_pRxDescriptors)
+                  2000c464    00000120     (.common:g_pTxDescriptors)
+                  2000c584    00000110     (.common:g_sWeather)
+                  2000c694    000000ea     (.common:lwip_stats)
+                  2000c77e    00000001     (.common:g_pui8CloudyImage)
+                  2000c77f    00000001     (.common:g_pui8FogImage)
+                  2000c780    000000c8     lwiplib.obj (.bss:arp_table)
+                  2000c848    00000094     (.common:g_sConfig)
+                  2000c8dc    00000080     uartstdio.obj (.bss:g_pcUARTRxBuffer)
+                  2000c95c    0000005c     lwiplib.obj (.bss)
+                  2000c9b8    00000038     lwiplib.obj (.bss:g_sNetIF)
+                  2000c9f0    00000028     (.common:dhcp_rx_options_val)
+                  2000ca18    00000028     (.common:g_pcCity)
+                  2000ca40    00000028     (.common:g_pcMACAddr)
+                  2000ca68    00000028     (.common:g_pcStatus)
+                  2000ca90    00000028     (.common:g_sEnet)
+                  2000cab8    00000024     cmdline.obj (.bss:g_ppcArgv)
+                  2000cadc    00000020     lwiplib.obj (.bss:memp_tab)
+                  2000cafc    00000014     (.common:g_pcIPAddr)
+                  2000cb10    00000010     flash_pb.obj (.bss)
+                  2000cb20    00000010     lwiplib.obj (.bss:inseg)
+                  2000cb30    0000000c     (.common:dhcp_rx_options_given)
+                  2000cb3c    00000008     lwiplib.obj (.bss:dns_servers)
+                  2000cb44    00000008     uartstdio.obj (.bss)
+                  2000cb4c    00000004     (.common:current_header)
+                  2000cb50    00000004     (.common:current_iphdr_dest)
+                  2000cb54    00000004     (.common:current_iphdr_src)
+                  2000cb58    00000004     (.common:current_netif)
+                  2000cb5c    00000004     (.common:g_pfnTimerHandler)
+                  2000cb60    00000004     (.common:g_ui32AbnormalInts)
+                  2000cb64    00000004     (.common:g_ui32CityActive)
+                  2000cb68    00000004     (.common:g_ui32CityUpdating)
+                  2000cb6c    00000004     (.common:g_ui32Cycles)
+                  2000cb70    00000004     (.common:g_ui32Delay)
+                  2000cb74    00000004     (.common:g_ui32IPaddr)
+                  2000cb78    00000004     (.common:g_ui32NormalInts)
+                  2000cb7c    00000004     (.common:g_ui32ProcessingCmds)
+                  2000cb80    00000004     (.common:g_ui32ShowCities)
+                  2000cb84    00000004     (.common:g_ui32SysClock)
+                  2000cb88    00000004     (.common:g_ui32UARTDelay)
+                  2000cb8c    00000004     (.common:netif_default)
+                  2000cb90    00000004     (.common:netif_list)
+                  2000cb94    00000004     (.common:tcp_active_pcbs)
+                  2000cb98    00000004     (.common:tcp_bound_pcbs)
+                  2000cb9c    00000004     (.common:tcp_input_pcb)
+                  2000cba0    00000004     (.common:tcp_listen_pcbs)
+                  2000cba4    00000004     (.common:tcp_ticks)
+                  2000cba8    00000004     (.common:tcp_tmp_pcb)
+                  2000cbac    00000004     (.common:tcp_tw_pcbs)
+                  2000cbb0    00000004     (.common:udp_pcbs)
+                  2000cbb4    00000001     (.common:g_pui8RainImage)
+                  2000cbb5    00000001     (.common:g_pui8SnowImage)
+                  2000cbb6    00000001     (.common:g_pui8SunImage)
+                  2000cbb7    00000001     (.common:g_pui8ThuderStormImage)
+                  2000cbb8    00000001     (.common:pbuf_free_ooseq_pending)
+                  2000cbb9    00000001     (.common:tcp_active_pcbs_changed)
+
+.stack     0    2000cbbc    00000800     UNINITIALIZED
+                  2000cbbc    00000800     --HOLE--
+
+.data      0    2000d3bc    0000020c     UNINITIALIZED
+                  2000d3bc    00000074     enet_weather.obj (.data:g_ppcCityNames)
+                  2000d430    00000048     commands.obj (.data:g_psCmdTable)
+                  2000d478    0000003c     lwiplib.obj (.data)
+                  2000d4b4    00000028     eth_client.obj (.data:g_cAPPIDOpenWeather)
+                  2000d4dc    00000028     enet_weather.obj (.data:g_pcHumidity)
+                  2000d504    00000028     enet_weather.obj (.data:g_pcTemp)
+                  2000d52c    00000028     enet_weather.obj (.data:g_pcTempHighLow)
+                  2000d554    00000015     uartstdio.obj (.data)
+                  2000d569    00000003     --HOLE--
+                  2000d56c    00000010     lwiplib.obj (.data:g_RxDescList)
+                  2000d57c    00000010     lwiplib.obj (.data:g_TxDescList)
+                  2000d58c    0000000e     eth_client.obj (.data:g_cHTTP11)
+                  2000d59a    00000002     --HOLE--
+                  2000d59c    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  2000d5a8    0000000c     lwiplib.obj (.data:g_StellarisIFData)
+                  2000d5b4    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data:$O1$$)
+                  2000d5bc    00000008     enet_weather.obj (.data)
+                  2000d5c4    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+MODULE SUMMARY
+
+       Module                     code    ro data   rw data
+       ------                     ----    -------   -------
+    .\
+       enet_weather.obj           2361    686       3152   
+       eth_client.obj             1544    146       366    
+       json.obj                   1536    226       0      
+       commands.obj               752     142       72     
+       startup_ccs.obj            12      512       0      
+       images.obj                 0       0         6      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     6205    1712      3596   
+                                                           
+    .\drivers\
+       pinout.obj                 536     0         0      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     536     0         0      
+                                                           
+    .\utils\
+       lwiplib.obj                26152   88        47820  
+       uartstdio.obj              1664    36        1181   
+       ustdlib.obj                899     0         0      
+       flash_pb.obj               152     0         16     
+       cmdline.obj                100     0         36     
+    +--+--------------------------+-------+---------+---------+
+       Total:                     28967   124       49053  
+                                                           
+    C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                 770     596       0      
+       emac.obj                   692     24        0      
+       interrupt.obj              204     268       0      
+       gpio.obj                   366     0         0      
+       systick.obj                56      0         0      
+       cpu.obj                    24      0         0      
+       flash.obj                  20      0         0      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     2132    888       0      
+                                                           
+    C:\ti\ti-cgt-arm_16.9.4.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.obj              156     0         0      
+       memset_t2.obj              122     0         0      
+       autoinit.obj               112     0         0      
+       copy_decompress_lzss.obj   104     0         0      
+       exit.obj                   84      0         12     
+       boot.obj                   84      0         0      
+       cpy_tbl.obj                76      0         0      
+       u_divt2.obj                64      0         0      
+       memcmp.obj                 36      0         0      
+       _lock.obj                  20      0         8      
+       args_main.obj              24      0         0      
+       strcmp.obj                 24      0         0      
+       strlen.obj                 20      0         0      
+       copy_decompress_none.obj   14      0         0      
+       copy_zero_init.obj         12      0         0      
+       pre_init.obj               4       0         0      
+       stkdepth_vars.obj          0       0         4      
+       i_div0.obj                 2       0         0      
+       mpu_init.obj               2       0         0      
+       startup.obj                2       0         0      
+    +--+--------------------------+-------+---------+---------+
+       Total:                     962     0         24     
+                                                           
+       Stack:                     0       0         2048   
+       Linker Generated:          0       327       0      
+    +--+--------------------------+-------+---------+---------+
+       Grand Total:               38802   3051      54721  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000a398 records: 2, size/record: 8, table size: 16
+	.data: load addr=0000a260, load size=00000123 bytes, run addr=2000d3bc, run size=0000020c bytes, compression=lzss
+	.bss: load addr=0000a390, load size=00000008 bytes, run addr=20000000, run size=0000cbba bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000a384 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+00009233  BufPtrInc                      
+00007e71  C$$EXIT                        
+000098bd  CPUcpsid                       
+000098c9  CPUcpsie                       
+00005ddd  CheckForUserCommands           
+00007585  CmdLineProcess                 
+000051e5  Cmd_cityscroll                 
+00007779  Cmd_help                       
+00002ba9  Cmd_setproxy                   
+000086fb  CompareString                  
+00009395  EMACAddrGet                    
+00008b91  EMACConfigGet                  
+00008929  EMACConfigSet                  
+000097e1  EMACFrameFilterSet             
+00006c2d  EMACInit                       
+00008bc5  EMACIntClear                   
+000088b5  EMACIntEnable                  
+00008eab  EMACIntStatus                  
+00007ac1  EMACPHYConfigSet               
+00009059  EMACPHYRead                    
+0000907f  EMACPHYWrite                   
+00009947  EMACPowerManagementStatusGet   
+00009601  EMACReset                      
+00009967  EMACRxDMADescriptorListSet     
+00009617  EMACRxEnable                   
+0000996d  EMACTimestampIntStatus         
+00009973  EMACTxDMADescriptorListSet     
+0000994f  EMACTxDMAPollDemand            
+0000962d  EMACTxEnable                   
+0000873d  EnetEvents                     
+00009425  EthClientAddrGet               
+000085ad  EthClientDHCPConnect           
+00007fbd  EthClientDNSResolve            
+00006a3d  EthClientInit                  
+000093d1  EthClientMACAddrGet            
+000097f1  EthClientProxySet              
+00008961  EthClientReset                 
+000090f1  EthClientSend                  
+00007b19  EthClientTCPConnect            
+000094e1  EthClientTCPDisconnect         
+00003ced  EthClientTick                  
+00009801  FlashPBGet                     
+00007b71  FlashPBInit                    
+0000969d  FlashUserGet                   
+00008f89  GPIODirModeSet                 
+00003bb9  GPIOPadConfigSet               
+00009751  GPIOPinTypeEthernetLED         
+00006e79  GetFieldValueInt               
+0000636b  GetFieldValueString            
+00008d8d  GetImage                       
+00005375  InitDMADescriptors             
+0000710d  IntEnable                      
+00009811  IntMasterDisable               
+00009821  IntMasterEnable                
+00009255  IntPriorityGroupingSet         
+00009115  IntPrioritySet                 
+000023e1  JSONParseCurrent               
+00002d71  JSONParseForecast              
+00001dc1  PinoutSet                      
+00008e7d  PrintIPAddress                 
+000081e9  ProxyEnable                    
+00006d1d  ResetCity                      
+00009979  ResetISR                       
+UNDEFED   SHT$$INIT_ARRAY$$Base          
+UNDEFED   SHT$$INIT_ARRAY$$Limit         
+000021e1  SysCtlClockFreqSet             
+0000997f  SysCtlDelay                    
+000098d5  SysCtlMOSCConfigSet            
+00008999  SysCtlPeripheralReady          
+0000800d  SysCtlPeripheralReset          
+000096b1  SysTickEnable                  
+000096c5  SysTickIntEnable               
+000093ed  SysTickIntHandler              
+00009831  SysTickPeriodSet               
+00008ed9  UARTFlushRx                    
+0000883d  UARTFlushTx                    
+000085f1  UARTPeek                       
+000057d5  UARTStdioConfig                
+00003411  UARTStdioIntHandler            
+00007ccd  UARTgets                       
+00009479  UARTprintf                     
+000029bd  UARTvprintf                    
+00005be5  UARTwrite                      
+00002f29  UpdateCity                     
+0000805d  UpdateIPAddress                
+000077d9  UpdateMACAddr                  
+00001fd9  UpdateUART                     
+000065a9  WeatherCurrent                 
+00006fc9  WeatherEvent                   
+00005935  WeatherForecast                
+2000d3bc  __STACK_END                    
+00000800  __STACK_SIZE                   
+2000d3bc  __STACK_TOP                    
+0000a398  __TI_CINIT_Base                
+0000a3a8  __TI_CINIT_Limit               
+0000a384  __TI_Handler_Table_Base        
+0000a390  __TI_Handler_Table_Limit       
+00006ee9  __TI_auto_init                 
+2000d59c  __TI_cleanup_ptr               
+000071dd  __TI_decompress_lzss           
+000098af  __TI_decompress_none           
+2000d5a0  __TI_dtors_ptr                 
+2000d5a4  __TI_enable_exit_profile_output
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+00000000  __TI_static_base__             
+000098ed  __TI_zero_init                 
+000063fb  __aeabi_idiv0                  
+00006bb1  __aeabi_memclr                 
+00006bb1  __aeabi_memclr4                
+00006bb1  __aeabi_memclr8                
+00006109  __aeabi_memcpy                 
+00006109  __aeabi_memcpy4                
+00006109  __aeabi_memcpy8                
+00006bb3  __aeabi_memset                 
+00006bb3  __aeabi_memset4                
+00006bb3  __aeabi_memset8                
+000087bd  __aeabi_uidiv                  
+000087bd  __aeabi_uidivmod               
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+000067bb  __mpu_init                     
+2000cbbc  __stack                        
+000095a1  _args_main                     
+00007e1d  _c_int00                       
+2000d5b4  _lock                          
+0000970f  _nop                           
+00009707  _register_lock                 
+00009701  _register_unlock               
+00006c2b  _system_post_cinit             
+000099a7  _system_pre_init               
+2000d5b8  _unlock                        
+00007e75  abort                          
+00006739  autoip_arp_reply               
+00009493  autoip_network_changed         
+00007bc9  autoip_start                   
+00009841  autoip_stop                    
+00004ddd  autoip_tmr                     
+ffffffff  binit                          
+000082cd  copy_in                        
+2000cb4c  current_header                 
+2000cb50  current_iphdr_dest             
+2000cb54  current_iphdr_src              
+2000cb58  current_netif                  
+000094ad  dhcp_arp_reply                 
+00008879  dhcp_coarse_tmr                
+000089d1  dhcp_fine_tmr                  
+00008635  dhcp_network_changed           
+00005e81  dhcp_release                   
+0000683d  dhcp_renew                     
+2000cb30  dhcp_rx_options_given          
+2000c9f0  dhcp_rx_options_val            
+00005c8d  dhcp_start                     
+00008a41  dhcp_stop                      
+00007899  dns_gethostbyname              
+000075e9  dns_init                       
+00009139  dns_setserver                  
+00009861  dns_tmr                        
+00009031  etharp_cleanup_netif           
+00003f35  etharp_output                  
+00004051  etharp_query                   
+00004c29  etharp_raw                     
+00008f5d  etharp_request                 
+0000877d  etharp_tmr                     
+0000a24a  ethbroadcast                   
+00005a8d  ethernet_input                 
+0000a250  ethzero                        
+00007e7d  exit                           
+2000d56c  g_RxDescList                   
+2000d57c  g_TxDescList                   
+2000d5c0  g_UpdateUART                   
+2000bd40  g_cInput                       
+2000d5bc  g_iState                       
+2000c344  g_pRxDescriptors               
+2000c464  g_pTxDescriptors               
+2000ca18  g_pcCity                       
+2000d4dc  g_pcHumidity                   
+2000cafc  g_pcIPAddr                     
+2000ca40  g_pcMACAddr                    
+0000a1e8  g_pcNotFound                   
+0000a204  g_pcServerBusy                 
+2000ca68  g_pcStatus                     
+2000d504  g_pcTemp                       
+2000d52c  g_pcTempHighLow                
+0000a1a4  g_pcWaitData                   
+2000cb5c  g_pfnTimerHandler              
+00000000  g_pfnVectors                   
+2000aec8  g_psCityInfo                   
+2000d430  g_psCmdTable                   
+2000c77e  g_pui8CloudyImage              
+2000c77f  g_pui8FogImage                 
+2000cbb4  g_pui8RainImage                
+2000cbb5  g_pui8SnowImage                
+2000cbb6  g_pui8SunImage                 
+2000cbb7  g_pui8ThuderStormImage         
+2000c848  g_sConfig                      
+2000ca90  g_sEnet                        
+2000c584  g_sWeather                     
+2000cb60  g_ui32AbnormalInts             
+2000cb64  g_ui32CityActive               
+2000cb68  g_ui32CityUpdating             
+2000cb6c  g_ui32Cycles                   
+2000cb70  g_ui32Delay                    
+2000cb74  g_ui32IPaddr                   
+2000d47c  g_ui32LocalTimer               
+2000cb78  g_ui32NormalInts               
+2000cb7c  g_ui32ProcessingCmds           
+2000cb80  g_ui32ShowCities               
+2000cb84  g_ui32SysClock                 
+2000cb88  g_ui32UARTDelay                
+00009957  icmp_dest_unreach              
+000030dd  icmp_input                     
+00009871  inet_chksum                    
+0000814b  inet_chksum_pbuf               
+00006069  inet_chksum_pseudo             
+00008cc9  ip4_addr_isbroadcast           
+0000a258  ip_addr_any                    
+0000a25c  ip_addr_broadcast              
+000025dd  ip_input                       
+00008445  ip_output                      
+00004885  ip_output_if                   
+00008281  ip_route                       
+000096d9  ipaddr_addr                    
+00004279  ipaddr_aton                    
+000068bd  lwIPEthernetIntHandler         
+00005933  lwIPHostTimerHandler           
+00004a61  lwIPInit                       
+00009425  lwIPLocalIPAddrGet             
+00009181  lwIPNetworkConfigChange        
+00009315  lwIPTimer                      
+000094c7  lwip_htonl                     
+000098f9  lwip_htons                     
+000096ed  lwip_init                      
+000094c7  lwip_ntohl                     
+000098f9  lwip_ntohs                     
+2000c694  lwip_stats                     
+000016f5  main                           
+2000d5c4  main_func_sp                   
+0000764d  mem_free                       
+00007d75  mem_init                       
+00004389  mem_malloc                     
+00004495  mem_trim                       
+000091c9  memcmp                         
+00006109  memcpy                         
+00008ab1  memp_free                      
+000070a1  memp_init                      
+000078f5  memp_malloc                    
+00006bb9  memset                         
+00007dc9  netif_add                      
+2000cb8c  netif_default                  
+2000cb90  netif_list                     
+00009441  netif_set_addr                 
+00009905  netif_set_default              
+000093b3  netif_set_down                 
+00009911  netif_set_gw                   
+00007315  netif_set_ipaddr               
+00009799  netif_set_link_down            
+000087fd  netif_set_link_up              
+0000991d  netif_set_netmask              
+000091a5  netif_set_up                   
+00003949  pbuf_alloc                     
+00008fdd  pbuf_cat                       
+00009881  pbuf_chain                     
+000097ab  pbuf_clen                      
+000062d9  pbuf_copy                      
+0000737d  pbuf_copy_partial              
+00008199  pbuf_free                      
+2000cbb8  pbuf_free_ooseq_pending        
+00007715  pbuf_header                    
+00007a65  pbuf_realloc                   
+00009685  pbuf_ref                       
+20000000  ram_heap                       
+00006e05  raw_input                      
+000095b9  strcmp                         
+00009715  strlen                         
+00009891  sys_arch_protect               
+00009729  sys_arch_unprotect             
+00009929  sys_now                        
+000073e5  sys_timeout                    
+00007839  sys_timeouts_init              
+000063fd  tcp_abandon                    
+00009985  tcp_abort                      
+2000cb94  tcp_active_pcbs                
+2000cbb9  tcp_active_pcbs_changed        
+00004eb1  tcp_alloc                      
+0000a1f7  tcp_backoff                    
+2000cb98  tcp_bound_pcbs                 
+0000973d  tcp_close                      
+00004699  tcp_connect                    
+00009335  tcp_eff_send_mss               
+00005d35  tcp_enqueue_flags              
+0000998b  tcp_err                        
+00006f59  tcp_fasttmr                    
+000009c1  tcp_input                      
+2000cb9c  tcp_input_pcb                  
+00007951  tcp_keepalive                  
+2000cba0  tcp_listen_pcbs                
+00009991  tcp_new                        
+000095d1  tcp_next_iss                   
+00003281  tcp_output                     
+0000a1d8  tcp_pcb_lists                  
+000086b9  tcp_pcb_purge                  
+000079ad  tcp_pcb_remove                 
+0000a243  tcp_persist_backoff            
+000074b5  tcp_process_refused_data       
+00009997  tcp_recv                       
+000090cb  tcp_recv_null                  
+00008cfb  tcp_recved                     
+00007c21  tcp_rexmit                     
+000084d5  tcp_rexmit_fast                
+00008e4d  tcp_rexmit_rto                 
+0000648d  tcp_rst                        
+000091ed  tcp_seg_copy                   
+000095e9  tcp_seg_free                   
+000097bd  tcp_segs_free                  
+00007a09  tcp_send_empty_ack             
+00008565  tcp_send_fin                   
+000099ab  tcp_sent                       
+0000142d  tcp_slowtmr                    
+2000cba4  tcp_ticks                      
+00008c61  tcp_timer_needed               
+2000cba8  tcp_tmp_pcb                    
+00009355  tcp_tmr                        
+2000cbac  tcp_tw_pcbs                    
+00008ded  tcp_update_rcv_ann_wnd         
+00001141  tcp_write                      
+00005b39  tcp_zero_window_probe          
+00008c95  tivaif_init                    
+00008319  tivaif_interrupt               
+00006b35  tivaif_process_phy_interrupt   
+0000751d  udp_bind                       
+00008365  udp_connect                    
+000027cd  udp_input                      
+0000945d  udp_new                        
+2000cbb0  udp_pcbs                       
+0000999d  udp_recv                       
+00008e1d  udp_remove                     
+00008b21  udp_sendto                     
+00004975  udp_sendto_if                  
+00009375  usprintf                       
+0000995f  ustrcmp                        
+000097cf  ustrlen                        
+00008b59  ustrncmp                       
+00009007  ustrncpy                       
+000061a5  ustrtoul                       
+00001949  uvsnprintf                     
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  __TI_static_base__             
+00000000  g_pfnVectors                   
+00000800  __STACK_SIZE                   
+000009c1  tcp_input                      
+00001141  tcp_write                      
+0000142d  tcp_slowtmr                    
+000016f5  main                           
+00001949  uvsnprintf                     
+00001dc1  PinoutSet                      
+00001fd9  UpdateUART                     
+000021e1  SysCtlClockFreqSet             
+000023e1  JSONParseCurrent               
+000025dd  ip_input                       
+000027cd  udp_input                      
+000029bd  UARTvprintf                    
+00002ba9  Cmd_setproxy                   
+00002d71  JSONParseForecast              
+00002f29  UpdateCity                     
+000030dd  icmp_input                     
+00003281  tcp_output                     
+00003411  UARTStdioIntHandler            
+00003949  pbuf_alloc                     
+00003bb9  GPIOPadConfigSet               
+00003ced  EthClientTick                  
+00003f35  etharp_output                  
+00004051  etharp_query                   
+00004279  ipaddr_aton                    
+00004389  mem_malloc                     
+00004495  mem_trim                       
+00004699  tcp_connect                    
+00004885  ip_output_if                   
+00004975  udp_sendto_if                  
+00004a61  lwIPInit                       
+00004c29  etharp_raw                     
+00004ddd  autoip_tmr                     
+00004eb1  tcp_alloc                      
+000051e5  Cmd_cityscroll                 
+00005375  InitDMADescriptors             
+000057d5  UARTStdioConfig                
+00005933  lwIPHostTimerHandler           
+00005935  WeatherForecast                
+00005a8d  ethernet_input                 
+00005b39  tcp_zero_window_probe          
+00005be5  UARTwrite                      
+00005c8d  dhcp_start                     
+00005d35  tcp_enqueue_flags              
+00005ddd  CheckForUserCommands           
+00005e81  dhcp_release                   
+00006069  inet_chksum_pseudo             
+00006109  __aeabi_memcpy                 
+00006109  __aeabi_memcpy4                
+00006109  __aeabi_memcpy8                
+00006109  memcpy                         
+000061a5  ustrtoul                       
+000062d9  pbuf_copy                      
+0000636b  GetFieldValueString            
+000063fb  __aeabi_idiv0                  
+000063fd  tcp_abandon                    
+0000648d  tcp_rst                        
+000065a9  WeatherCurrent                 
+00006739  autoip_arp_reply               
+000067bb  __mpu_init                     
+0000683d  dhcp_renew                     
+000068bd  lwIPEthernetIntHandler         
+00006a3d  EthClientInit                  
+00006b35  tivaif_process_phy_interrupt   
+00006bb1  __aeabi_memclr                 
+00006bb1  __aeabi_memclr4                
+00006bb1  __aeabi_memclr8                
+00006bb3  __aeabi_memset                 
+00006bb3  __aeabi_memset4                
+00006bb3  __aeabi_memset8                
+00006bb9  memset                         
+00006c2b  _system_post_cinit             
+00006c2d  EMACInit                       
+00006d1d  ResetCity                      
+00006e05  raw_input                      
+00006e79  GetFieldValueInt               
+00006ee9  __TI_auto_init                 
+00006f59  tcp_fasttmr                    
+00006fc9  WeatherEvent                   
+000070a1  memp_init                      
+0000710d  IntEnable                      
+000071dd  __TI_decompress_lzss           
+00007315  netif_set_ipaddr               
+0000737d  pbuf_copy_partial              
+000073e5  sys_timeout                    
+000074b5  tcp_process_refused_data       
+0000751d  udp_bind                       
+00007585  CmdLineProcess                 
+000075e9  dns_init                       
+0000764d  mem_free                       
+00007715  pbuf_header                    
+00007779  Cmd_help                       
+000077d9  UpdateMACAddr                  
+00007839  sys_timeouts_init              
+00007899  dns_gethostbyname              
+000078f5  memp_malloc                    
+00007951  tcp_keepalive                  
+000079ad  tcp_pcb_remove                 
+00007a09  tcp_send_empty_ack             
+00007a65  pbuf_realloc                   
+00007ac1  EMACPHYConfigSet               
+00007b19  EthClientTCPConnect            
+00007b71  FlashPBInit                    
+00007bc9  autoip_start                   
+00007c21  tcp_rexmit                     
+00007ccd  UARTgets                       
+00007d75  mem_init                       
+00007dc9  netif_add                      
+00007e1d  _c_int00                       
+00007e71  C$$EXIT                        
+00007e75  abort                          
+00007e7d  exit                           
+00007fbd  EthClientDNSResolve            
+0000800d  SysCtlPeripheralReset          
+0000805d  UpdateIPAddress                
+0000814b  inet_chksum_pbuf               
+00008199  pbuf_free                      
+000081e9  ProxyEnable                    
+00008281  ip_route                       
+000082cd  copy_in                        
+00008319  tivaif_interrupt               
+00008365  udp_connect                    
+00008445  ip_output                      
+000084d5  tcp_rexmit_fast                
+00008565  tcp_send_fin                   
+000085ad  EthClientDHCPConnect           
+000085f1  UARTPeek                       
+00008635  dhcp_network_changed           
+000086b9  tcp_pcb_purge                  
+000086fb  CompareString                  
+0000873d  EnetEvents                     
+0000877d  etharp_tmr                     
+000087bd  __aeabi_uidiv                  
+000087bd  __aeabi_uidivmod               
+000087fd  netif_set_link_up              
+0000883d  UARTFlushTx                    
+00008879  dhcp_coarse_tmr                
+000088b5  EMACIntEnable                  
+00008929  EMACConfigSet                  
+00008961  EthClientReset                 
+00008999  SysCtlPeripheralReady          
+000089d1  dhcp_fine_tmr                  
+00008a41  dhcp_stop                      
+00008ab1  memp_free                      
+00008b21  udp_sendto                     
+00008b59  ustrncmp                       
+00008b91  EMACConfigGet                  
+00008bc5  EMACIntClear                   
+00008c61  tcp_timer_needed               
+00008c95  tivaif_init                    
+00008cc9  ip4_addr_isbroadcast           
+00008cfb  tcp_recved                     
+00008d8d  GetImage                       
+00008ded  tcp_update_rcv_ann_wnd         
+00008e1d  udp_remove                     
+00008e4d  tcp_rexmit_rto                 
+00008e7d  PrintIPAddress                 
+00008eab  EMACIntStatus                  
+00008ed9  UARTFlushRx                    
+00008f5d  etharp_request                 
+00008f89  GPIODirModeSet                 
+00008fdd  pbuf_cat                       
+00009007  ustrncpy                       
+00009031  etharp_cleanup_netif           
+00009059  EMACPHYRead                    
+0000907f  EMACPHYWrite                   
+000090cb  tcp_recv_null                  
+000090f1  EthClientSend                  
+00009115  IntPrioritySet                 
+00009139  dns_setserver                  
+00009181  lwIPNetworkConfigChange        
+000091a5  netif_set_up                   
+000091c9  memcmp                         
+000091ed  tcp_seg_copy                   
+00009233  BufPtrInc                      
+00009255  IntPriorityGroupingSet         
+00009315  lwIPTimer                      
+00009335  tcp_eff_send_mss               
+00009355  tcp_tmr                        
+00009375  usprintf                       
+00009395  EMACAddrGet                    
+000093b3  netif_set_down                 
+000093d1  EthClientMACAddrGet            
+000093ed  SysTickIntHandler              
+00009425  EthClientAddrGet               
+00009425  lwIPLocalIPAddrGet             
+00009441  netif_set_addr                 
+0000945d  udp_new                        
+00009479  UARTprintf                     
+00009493  autoip_network_changed         
+000094ad  dhcp_arp_reply                 
+000094c7  lwip_htonl                     
+000094c7  lwip_ntohl                     
+000094e1  EthClientTCPDisconnect         
+000095a1  _args_main                     
+000095b9  strcmp                         
+000095d1  tcp_next_iss                   
+000095e9  tcp_seg_free                   
+00009601  EMACReset                      
+00009617  EMACRxEnable                   
+0000962d  EMACTxEnable                   
+00009685  pbuf_ref                       
+0000969d  FlashUserGet                   
+000096b1  SysTickEnable                  
+000096c5  SysTickIntEnable               
+000096d9  ipaddr_addr                    
+000096ed  lwip_init                      
+00009701  _register_unlock               
+00009707  _register_lock                 
+0000970f  _nop                           
+00009715  strlen                         
+00009729  sys_arch_unprotect             
+0000973d  tcp_close                      
+00009751  GPIOPinTypeEthernetLED         
+00009799  netif_set_link_down            
+000097ab  pbuf_clen                      
+000097bd  tcp_segs_free                  
+000097cf  ustrlen                        
+000097e1  EMACFrameFilterSet             
+000097f1  EthClientProxySet              
+00009801  FlashPBGet                     
+00009811  IntMasterDisable               
+00009821  IntMasterEnable                
+00009831  SysTickPeriodSet               
+00009841  autoip_stop                    
+00009861  dns_tmr                        
+00009871  inet_chksum                    
+00009881  pbuf_chain                     
+00009891  sys_arch_protect               
+000098af  __TI_decompress_none           
+000098bd  CPUcpsid                       
+000098c9  CPUcpsie                       
+000098d5  SysCtlMOSCConfigSet            
+000098ed  __TI_zero_init                 
+000098f9  lwip_htons                     
+000098f9  lwip_ntohs                     
+00009905  netif_set_default              
+00009911  netif_set_gw                   
+0000991d  netif_set_netmask              
+00009929  sys_now                        
+00009947  EMACPowerManagementStatusGet   
+0000994f  EMACTxDMAPollDemand            
+00009957  icmp_dest_unreach              
+0000995f  ustrcmp                        
+00009967  EMACRxDMADescriptorListSet     
+0000996d  EMACTimestampIntStatus         
+00009973  EMACTxDMADescriptorListSet     
+00009979  ResetISR                       
+0000997f  SysCtlDelay                    
+00009985  tcp_abort                      
+0000998b  tcp_err                        
+00009991  tcp_new                        
+00009997  tcp_recv                       
+0000999d  udp_recv                       
+000099a7  _system_pre_init               
+000099ab  tcp_sent                       
+0000a1a4  g_pcWaitData                   
+0000a1d8  tcp_pcb_lists                  
+0000a1e8  g_pcNotFound                   
+0000a1f7  tcp_backoff                    
+0000a204  g_pcServerBusy                 
+0000a243  tcp_persist_backoff            
+0000a24a  ethbroadcast                   
+0000a250  ethzero                        
+0000a258  ip_addr_any                    
+0000a25c  ip_addr_broadcast              
+0000a384  __TI_Handler_Table_Base        
+0000a390  __TI_Handler_Table_Limit       
+0000a398  __TI_CINIT_Base                
+0000a3a8  __TI_CINIT_Limit               
+20000000  ram_heap                       
+2000aec8  g_psCityInfo                   
+2000bd40  g_cInput                       
+2000c344  g_pRxDescriptors               
+2000c464  g_pTxDescriptors               
+2000c584  g_sWeather                     
+2000c694  lwip_stats                     
+2000c77e  g_pui8CloudyImage              
+2000c77f  g_pui8FogImage                 
+2000c848  g_sConfig                      
+2000c9f0  dhcp_rx_options_val            
+2000ca18  g_pcCity                       
+2000ca40  g_pcMACAddr                    
+2000ca68  g_pcStatus                     
+2000ca90  g_sEnet                        
+2000cafc  g_pcIPAddr                     
+2000cb30  dhcp_rx_options_given          
+2000cb4c  current_header                 
+2000cb50  current_iphdr_dest             
+2000cb54  current_iphdr_src              
+2000cb58  current_netif                  
+2000cb5c  g_pfnTimerHandler              
+2000cb60  g_ui32AbnormalInts             
+2000cb64  g_ui32CityActive               
+2000cb68  g_ui32CityUpdating             
+2000cb6c  g_ui32Cycles                   
+2000cb70  g_ui32Delay                    
+2000cb74  g_ui32IPaddr                   
+2000cb78  g_ui32NormalInts               
+2000cb7c  g_ui32ProcessingCmds           
+2000cb80  g_ui32ShowCities               
+2000cb84  g_ui32SysClock                 
+2000cb88  g_ui32UARTDelay                
+2000cb8c  netif_default                  
+2000cb90  netif_list                     
+2000cb94  tcp_active_pcbs                
+2000cb98  tcp_bound_pcbs                 
+2000cb9c  tcp_input_pcb                  
+2000cba0  tcp_listen_pcbs                
+2000cba4  tcp_ticks                      
+2000cba8  tcp_tmp_pcb                    
+2000cbac  tcp_tw_pcbs                    
+2000cbb0  udp_pcbs                       
+2000cbb4  g_pui8RainImage                
+2000cbb5  g_pui8SnowImage                
+2000cbb6  g_pui8SunImage                 
+2000cbb7  g_pui8ThuderStormImage         
+2000cbb8  pbuf_free_ooseq_pending        
+2000cbb9  tcp_active_pcbs_changed        
+2000cbbc  __stack                        
+2000d3bc  __STACK_END                    
+2000d3bc  __STACK_TOP                    
+2000d430  g_psCmdTable                   
+2000d47c  g_ui32LocalTimer               
+2000d4dc  g_pcHumidity                   
+2000d504  g_pcTemp                       
+2000d52c  g_pcTempHighLow                
+2000d56c  g_RxDescList                   
+2000d57c  g_TxDescList                   
+2000d59c  __TI_cleanup_ptr               
+2000d5a0  __TI_dtors_ptr                 
+2000d5a4  __TI_enable_exit_profile_output
+2000d5b4  _lock                          
+2000d5b8  _unlock                        
+2000d5bc  g_iState                       
+2000d5c0  g_UpdateUART                   
+2000d5c4  main_func_sp                   
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  binit                          
+UNDEFED   SHT$$INIT_ARRAY$$Base          
+UNDEFED   SHT$$INIT_ARRAY$$Limit         
+
+[347 symbols]

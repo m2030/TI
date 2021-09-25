@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;lwip_1/ethernitif.c&apos; to &apos;ethernetif.c&apos;" description="Rename resource &apos;ethernitif.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ethernitif.c" name="ethernetif.c" stamp="1595852692580" updateReferences="true"/>
+</session>

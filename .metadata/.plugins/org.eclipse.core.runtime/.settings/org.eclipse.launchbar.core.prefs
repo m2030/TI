@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:httpget_EK_TM4C1294XL_TI,org.eclipse.launchbar.core.descriptorType.default\:aws_5,org.eclipse.launchbar.core.descriptorType.default\:rw,org.eclipse.launchbar.core.descriptorType.default\:enet_lwip,org.eclipse.launchbar.core.descriptorType.default\:tcpEchoTLS_EK_TM4C1294XL_TI,org.eclipse.launchbar.core.descriptorType.default\:uartecho_EK_TM4C1294XL_TI,org.eclipse.launchbar.core.descriptorType.default\:uartlogging_EK_TM4C1294XL_TI,org.eclipse.launchbar.core.descriptorType.default\:Build-TMS570LC43x,org.eclipse.launchbar.core.descriptorType.default\:lwip_1,org.eclipse.launchbar.core.descriptorType.default\:hello,org.eclipse.launchbar.core.descriptorType.default\:SPI_tm4c
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Build-TMS570LC43x/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Build-TMS570LC43x/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:SPI_Tivac/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:hello/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:httpget_EK_TM4C1294XL_TI/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:httpget_EK_TM4C1294XL_TI/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:lwip_1/activeLaunchMode=debug
